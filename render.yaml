@@ -1,15 +1,22 @@
 services:
   - type: web
     name: cargaison
-    env: php
-    buildCommand: composer install
-    startCommand: vendor/bin/heroku-php-apache2 public/
+    runtime: php
+    buildCommand: |
+      composer install
+      npm install
+      npm run build
+    startCommand: heroku-php-apache2 public/
     envVars:
       - key: PHP_VERSION
         value: "8.1"
+      - key: NODE_VERSION
+        value: "18.x"
     buildFilter:
       paths:
         - public/**
         - src/**
         - composer.json
         - composer.lock
+        - package.json
+        - tsconfig.json

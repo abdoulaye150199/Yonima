@@ -2,7 +2,7 @@
     "name": "yonima/cargaison",
     "type": "project",
     "require": {
-        "php": "^8.0",
+        "php": "^8.1",
         "ext-json": "*"
     },
     "require-dev": {
@@ -10,9 +10,11 @@
     },
     "config": {
         "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true
+        "preferred-install": "dist"
     },
-    "minimum-stability": "stable",
-    "prefer-stable": true
+    "scripts": {
+        "post-install-cmd": [
+            "chmod -R 755 public/"
+        ]
+    }
 }

@@ -5,7 +5,8 @@
   "scripts": {
     "build": "tsc",
     "dev": "concurrently \"npm run build:watch\" \"php -S localhost:8000 -t public\"",
-    "build:watch": "tsc --watch"
+    "build:watch": "tsc --watch",
+    "postinstall": "npm run build"
   },
   "engines": {
     "node": ">=18.0.0"
