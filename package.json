@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
     "build": "tsc",
+    "dev": "concurrently \"npm run build:watch\" \"php -S localhost:8000 -t public\"",
     "build:watch": "tsc --watch",
-    "dev": "tsc --watch",
     "clean": "rm -rf dist",
-    "start": "npm run build && php -S localhost:8000 -t public",
     "json-server": "json-server db.json --port 3000",
     "dev:full": "concurrently \"npm run json-server\" \"npm run start\"",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -25,6 +25,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
+    "express": "^4.21.2",
     "json-server": "^1.0.0-beta.3"
   }
 }
