@@ -1,0 +1,38 @@
+# Dependencies
+/node_modules/
+/vendor/
+
+# Compiled files
+/dist/
+/build/
+*.js.map
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# IDE files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Cache
+.cache/
+.php_cs.cache
+
+# Temporary files
+*.swp
+*.swo
+*~
