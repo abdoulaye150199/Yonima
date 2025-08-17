@@ -5,8 +5,8 @@ services:
     buildCommand: composer install
     startCommand: vendor/bin/heroku-php-apache2 public/
     envVars:
-      - key: NODE_ENV
-        value: production
+      - key: PHP_VERSION
+        value: "8.1"
     buildFilter:
       paths:
         - public/**

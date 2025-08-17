@@ -1,9 +1,18 @@
 {
+    "name": "yonima/cargaison",
+    "type": "project",
     "require": {
         "php": "^8.0",
         "ext-json": "*"
     },
     "require-dev": {
         "heroku/heroku-buildpack-php": "*"
-    }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
 }

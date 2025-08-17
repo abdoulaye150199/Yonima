@@ -1,14 +1,17 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
-
-    # Si le fichier demandé existe, servir directement
+    
+    # Si le fichier ou dossier n'existe pas
     RewriteCond %{REQUEST_FILENAME} !-f
     RewriteCond %{REQUEST_FILENAME} !-d
+    
+    # Rediriger vers index.php
+    RewriteRule ^ index.php [QSA,L]
+</IfModule>
 
-    # Sinon, rediriger vers index.php
-    RewriteRule ^(.*)$ index.php [QSA,L]
-
-    # Forcer l'exécution des fichiers PHP
-    AddType application/x-httpd-php .php
+# PHP Settings
+<IfModule mod_php.c>
+    php_flag display_errors on
+    php_value error_reporting E_ALL
 </IfModule>
