@@ -1,11 +1,13 @@
 <IfModule mod_rewrite.c>
     RewriteEngine On
     RewriteBase /
-    
-    # Rediriger toutes les requêtes vers index.php
-    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Si le fichier demandé existe, servir directement
     RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteRule ^ index.php [QSA,L]
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # Sinon, rediriger vers index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
 
     # Forcer l'exécution des fichiers PHP
     AddType application/x-httpd-php .php

@@ -1,16 +1,11 @@
 {
   "name": "cargaison",
   "version": "1.0.0",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "start": "node index.js",
     "build": "tsc",
     "dev": "concurrently \"npm run build:watch\" \"php -S localhost:8000 -t public\"",
-    "build:watch": "tsc --watch",
-    "clean": "rm -rf dist",
-    "json-server": "json-server db.json --port 3000",
-    "dev:full": "concurrently \"npm run json-server\" \"npm run start\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:watch": "tsc --watch"
   },
   "keywords": [
     "typescript",
