@@ -1,9 +1,9 @@
 services:
   - type: web
     name: cargaison
-    env: node
-    buildCommand: npm install && npm run build
-    startCommand: npm start
+    env: php
+    buildCommand: composer install
+    startCommand: heroku-php-apache2 public/
     envVars:
       - key: NODE_ENV
         value: production
