@@ -3,7 +3,13 @@ services:
     name: cargaison
     env: php
     buildCommand: composer install
-    startCommand: heroku-php-apache2 public/
+    startCommand: vendor/bin/heroku-php-apache2 public/
     envVars:
       - key: NODE_ENV
         value: production
+    buildFilter:
+      paths:
+        - public/**
+        - src/**
+        - composer.json
+        - composer.lock
